@@ -32,15 +32,19 @@ const loadVideos = async(id) => {
 const displayAllVideos = (videos) => {
     videosContainer.innerText = "";
     videos.forEach(video => {
+        console.log(video);
         const div = document.createElement("div");
-        div.className = "card cursor-pointer border-2";
+        div.className = "card cursor-pointer";
         div.innerHTML = `
         <figure>
-            <img src="${video.thumbnail}" alt="video" />
+            <img class="rounded-lg max-h-40 w-full" src="${video.thumbnail}" alt="video" />
         </figure>
-        <div class="card-body">
+        <div class="card-body px-0">
+            <div class="flex gap-3">
+                <img  class="w-10 h-10 rounded-full" src="${video?.authors[0]?.profile_picture}" alt="author" />
             <h2 class="card-title">${video.title}</h2>
-            <div class="flex gap-2">
+            </div>
+            <div class="flex gap-2 pl-14">
             <span>${video?.authors[0]?.profile_name}</span>
             ${video?.authors[0]?.verified ? `<span>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -56,7 +60,7 @@ const displayAllVideos = (videos) => {
             </svg>
             </span>` : ""}
             </div>
-            <span>${video?.others?.views} views</span>
+            <span class="pl-14">${video?.others?.views} views</span>
         </div>
         `
         videosContainer.appendChild(div)

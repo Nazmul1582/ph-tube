@@ -17,6 +17,9 @@ const displayCategories = (categories) => {
         button.setAttribute('onclick', `loadVideos(${item.category_id})`)        
         categoriesContainer.appendChild(button)
     })
+    
+    // initially show all videos of all category
+    loadVideos(categories[0].category_id);
 }
 
 loadCategories()

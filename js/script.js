@@ -34,12 +34,12 @@ const displayAllVideos = (videos) => {
     videos.forEach(video => {
         console.log(video);
         const div = document.createElement("div");
-        div.className = "card cursor-pointer";
+        div.className = "card";
         div.innerHTML = `
         <figure>
             <img class="rounded-lg max-h-40 w-full" src="${video.thumbnail}" alt="video" />
         </figure>
-        <div class="card-body px-0">
+        <div class="card-body p-0 pt-5">
             <div class="flex gap-3">
                 <img  class="w-10 h-10 rounded-full" src="${video?.authors[0]?.profile_picture}" alt="author" />
             <h2 class="card-title">${video.title}</h2>

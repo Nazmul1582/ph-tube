@@ -1,1 +1,20 @@
-console.log("JS code from script.js");
+const categoriesContainer = document.getElementById('categories')
+
+// load all categories
+const loadCategories = async() => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/categories`);
+    const result = await res.json();
+    const data = result.data;
+    displayCategories(data)
+}
+// set all categories in categories container
+const displayCategories = (categories) => {
+    categories.forEach(item => {
+        const button = document.createElement("button");
+        button.innerText = `${item.category}`;
+        button.setAttribute('class', 'btn')        
+        categoriesContainer.appendChild(button)
+    })
+}
+
+loadCategories()

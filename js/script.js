@@ -70,9 +70,7 @@ const displayAllVideos = (videos) => {
             let postedDate = `${postedYears} ${postedMonths} ${postedDays} ${postedHours} ${postedMinutes}`;
             
             postedDate = postedDate != "    " ? `${postedDate} ago` : ""
-            console.log(postedDate);
             
-            console.log(video);
             const div = document.createElement("div");
             div.className = "card";
             div.innerHTML = `

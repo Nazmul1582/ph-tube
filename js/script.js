@@ -74,9 +74,9 @@ const displayAllVideos = (videos) => {
         const div = document.createElement("div");
         div.className = "card";
         div.innerHTML = `
-        <figure>
+        <figure class="relative">
             <img class="rounded-lg max-h-40 w-full" src="${video.thumbnail}" alt="video" />
-            <span>${video?.others?.posted_date}</span>
+            ${postedDate ? `<span class="absolute bottom-3 right-3 bg-slate-900 text-white p-2 rounded-md text-xs">${postedDate}</span>` : ""} 
         </figure>
         <div class="card-body p-0 pt-5">
             <div class="flex gap-3">

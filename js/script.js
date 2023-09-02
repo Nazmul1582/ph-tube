@@ -17,7 +17,7 @@ const displayCategories = (categories) => {
         button.setAttribute('onclick', `loadVideos(${item.category_id})`)        
         categoriesContainer.appendChild(button)
     })
-    
+
     // initially show all videos of all category
     loadVideos(categories[0].category_id);
 }
@@ -35,12 +35,46 @@ const loadVideos = async(id) => {
 const displayAllVideos = (videos) => {
     videosContainer.innerText = "";
     videos.forEach(video => {
+
+        let postedTime = video?.others?.posted_date
+
+        let years = postedTime / (60*60*24*365)
+        let postedYears = Math.floor(years);
+
+        postedTime = postedTime % (60*60*24*365);
+        let months = postedTime / (60*60*24*30)
+        let postedMonths = Math.floor(months);
+
+        postedTime = postedTime % (60*60*24*30)
+        let days = postedTime / (60*60*24);
+        let postedDays = Math.floor(days);
+
+        postedTime = postedTime % (60*60*24)
+        let hours = postedTime / (60*60);
+        let postedHours = Math.floor(hours);
+
+        postedTime = postedTime % (60*60);
+        let minutes = postedTime / 60;
+        let postedMinutes = Math.floor(minutes)
+        
+        console.log("Years", years);
+        console.log("posted Years", postedYears);
+        console.log("months", months);
+        console.log("postedMonths", postedMonths);
+        console.log("days", days);
+        console.log("postedDays", postedDays);
+        console.log("hours", hours);
+        console.log("postedHours", postedHours);
+        console.log("minutes", minutes);
+        console.log("postedMinutes", postedMinutes);
+
         console.log(video);
         const div = document.createElement("div");
         div.className = "card";
         div.innerHTML = `
         <figure>
             <img class="rounded-lg max-h-40 w-full" src="${video.thumbnail}" alt="video" />
+            <span>${video?.others?.posted_date}</span>
         </figure>
         <div class="card-body p-0 pt-5">
             <div class="flex gap-3">

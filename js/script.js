@@ -109,8 +109,8 @@ const displayAllVideos = (videos) => {
     }else{
         videosContainer.removeAttribute('class');
         videosContainer.innerHTML = `
-        <div class="text-center">
-            <img src="./Icon.png" alt="no video image" />
+        <div class="max-w-sm mx-auto my-20 text-center">
+            <img class="mx-auto mb-8" src="./Icon.png" alt="no video image" />
             <h2 class="text-3xl font-bold">Oops!! Sorry, There is no content here</h2>
         </div>
         `

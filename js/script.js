@@ -102,6 +102,7 @@ const displayAllVideos = (videos) => {
             <span class="pl-14">${video?.others?.views} views</span>
             </div>
             `
+            !videosContainer.getAttribute('class') ? videosContainer.setAttribute('class', "grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mx-3 md:mx-0 gap-6") : "";
             videosContainer.appendChild(div)
         })
     }else{

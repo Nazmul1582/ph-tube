@@ -36,6 +36,7 @@ const displayAllVideos = (videos) => {
     videosContainer.innerText = "";
     videos.forEach(video => {
 
+        // find posted_date and formate it
         let postedTime = video?.others?.posted_date
 
         let years = postedTime / (60*60*24*365)
@@ -57,16 +58,17 @@ const displayAllVideos = (videos) => {
         let minutes = postedTime / 60;
         let postedMinutes = Math.floor(minutes)
         
-        console.log("Years", years);
-        console.log("posted Years", postedYears);
-        console.log("months", months);
-        console.log("postedMonths", postedMonths);
-        console.log("days", days);
-        console.log("postedDays", postedDays);
-        console.log("hours", hours);
-        console.log("postedHours", postedHours);
-        console.log("minutes", minutes);
-        console.log("postedMinutes", postedMinutes);
+        postedYears = postedYears > 0 ? `${postedYears}yrs`: "";
+        postedMonths = postedMonths > 0 ? `${postedMonths}mths` : "";
+        postedDays = postedDays > 0 ? `${postedDays}days` : "";
+        postedHours = postedHours > 0 ? `${postedHours}hrs` : "";
+        postedMinutes = postedMinutes > 0 ? `${postedMinutes} min` : "";
+
+        // posted_date output
+        let postedDate = `${postedYears} ${postedMonths} ${postedDays} ${postedHours} ${postedMinutes}`;
+
+        postedDate = postedDate != "    " ? `${postedDate} ago` : ""
+        console.log(postedDate);
 
         console.log(video);
         const div = document.createElement("div");

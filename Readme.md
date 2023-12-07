@@ -1,26 +1,20 @@
-# PHero-tube
-
-## [ Private Repo Link](https://classroom.github.com/a/HIPmbF3j)
-
-Click here for the private repo: [https://classroom.github.com/a/HIPmbF3j](https://classroom.github.com/a/HIPmbF3j)
+# PH-Tube
 
 
-
-# API
-
-All category :  - https://openapi.programming-hero.com/api/videos/categories
+**Website Live Link:** [ph-tube](https://phero-tube-nazmul1582.netlify.app/)
 
 
-### ALL data by categoryId
-URL Format: - https://openapi.programming-hero.com/api/videos/category/${id}
+### Description
+PH-Tube is an API-focused web application created with JavaScript, HTML, Tailwind CSS, and Daisy UI. This project is designed to streamline content discovery by implementing a robust filtering system. Users can effortlessly filter content by category, enhancing their browsing experience. Additionally, the application provides a "short by views" feature, allowing users to prioritize content based on popularity.
 
-Example: - https://openapi.programming-hero.com/api/videos/category/1000
+### Key Features
+- API Integration: Seamless integration with external APIs for rich and up-to-date content.
+- Category Filtering: Efficiently filter content by category for a personalized browsing experience.
+- Views Sorting: Prioritize content based on views to discover popular items quickly.
 
-
-## Blog Questions
-
-- Discuss the scope of `var`, `let`, and `const`
-- Tell us the use cases of `null` and `undefined`
-- What do you mean by REST API?
-
-
+### Technologies Used
+- JavaScript
+- API Integration
+- HTML
+- Tailwind CSS
+- Daisy UI
